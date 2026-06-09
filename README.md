@@ -1,43 +1,52 @@
-# Hub Acadêmico - Resumos CTI 2026
+# craft — páginas estáticas do Proddyt Labs
 
-Este projeto é um portal educacional moderno e interativo desenvolvido para organizar resumos das matérias do 1º Bimestre do curso técnico CTI.
+`craft.proddyt.site` é a **home das páginas estáticas**. A raiz (`/`) é o índice
+que lista as páginas; cada página vive num **sub-path** (ex: `/hub-aula-1/`).
 
-## 🚀 Tecnologias Utilizadas
-
-- **HTML5**: Estruturação semântica e acessível.
-- **CSS3 Moderno**: 
-  - **Grid & Flexbox**: Layout responsivo em grade 2x2.
-  - **Glassmorphism**: Efeitos de transparência e desfoque de fundo.
-  - **CSS Variables**: Gerenciamento centralizado de cores e tokens de design.
-  - **Animações (cubic-bezier)**: Transições suaves e efeitos de flutuação nos cards.
-- **Git & GitHub**: Versionamento e hospedagem do código.
-
-## 🎨 Design e Estética
-
-O projeto foca em uma experiência de usuário **Premium** e **Dinamica**:
-- **Paleta Dark**: Fundo escuro com cores vibrantes para cada linguagem (PHP, Java, C#, HTML/CSS).
-- **Interatividade**: Cards com efeitos de brilho (card-glow) e escala ao passar o mouse.
-- **Tipografia**: Utilização da fonte "Inter" para garantir legibilidade e modernidade.
-
-## 📂 Organização do Projeto
-
-```text
-├── index.html          # Dashboard principal (Hub)
-├── style.css           # Folha de estilo unificada
-├── src/                # Diretório de resumos detalhados
-│   ├── php.html        # Resumo de PHP
-│   ├── java.html       # Resumo de Java
-│   ├── csharp.html     # Resumo de C#
-│   └── apps.html       # Resumo de Aplicativos 1
-└── image/              # Assets e logotipos customizados
+```
+craft/
+├── index.html      ← o índice (não precisa editar)
+├── pages.js        ← A LISTA de páginas  ← edite AQUI
+├── style.css       ← identidade visual (igual à home)
+├── README.md
+└── hub-aula-1/     ← uma página (repo clonado)
+    └── index.html
 ```
 
-## 🛠️ Pontos de Destaque
+## ➕ Adicionar uma página nova (ex: Hub de Aula 2)
 
-1.  **Arquitetura Multi-Página**: Transição de uma aplicação de página única para uma estrutura organizada em pastas, facilitando a expansão de conteúdo.
-2.  **Identidade Visual**: Troca de logos genéricos (SVG) por imagens de alta resolução fornecidas para cada tecnologia.
-3.  **Experiência Responsiva**: Layout que se adapta a diferentes tamanhos de tela, mantendo a grade 2x2 em desktops.
-4.  **Navegação Fluida**: Botões de retorno integrados em todas as subpáginas para uma navegação sem fricção.
+```bash
+# 1) clona o repo na pasta com o caminho que você quer (= o sub-path da URL)
+git clone <repo> /opt/docker/proddyt-labs/craft/hub-aula-2
 
----
-*Desenvolvido como ferramenta de estudo para o CTI 2026.*
+# 2) adiciona UM objeto no array PAGES em pages.js:
+#    { name: "Hub de Aula 2", href: "hub-aula-2/", desc: "...", tag: "cti", mark: "{2}" }
+
+# 3) rebuild
+cd /opt/docker/proddyt-labs/craft && docker compose up -d --build
+```
+
+Pronto: aparece no índice e fica acessível em `craft.proddyt.site/hub-aula-2/`.
+
+## Campos de um item (pages.js)
+
+| campo    | obrigatório | o quê |
+|----------|:-----------:|-------|
+| `name`   | ✅ | título do card |
+| `href`   | ✅ | `"pasta/"` (página estática) **ou** `"https://..."` (sistema) |
+| `desc`   |    | descrição curta |
+| `tag`    |    | rótulo (ex: `cti`, `dev`) |
+| `mark`   |    | símbolo no ícone (ex: `{ }`) |
+| `accent` |    | cor hex do ícone |
+| `system` |    | **`true`** marca como SISTEMA → mostra status online/offline. |
+
+### Flag `system`
+Páginas estáticas estão **sempre no ar** (servidas pelo próprio nginx do craft),
+então **não** levam status online/offline — é só um link.
+Use `system: true` apenas para **sistemas/apps externos** (ex: `tools.proddyt.site`),
+que aí sim ganham o indicador online/offline (checado via favicon).
+
+## Requisitos da página clonada
+- Ter um `index.html` na raiz da pasta.
+- Usar caminhos **relativos** para assets (`src/...`, `image/...`), nunca `/src/...`,
+  para funcionar sob o sub-path.

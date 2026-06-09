@@ -2,3 +2,5 @@
 .github
 README.md
 text.md
+Dockerfile
+docker-compose.yml

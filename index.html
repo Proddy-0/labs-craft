@@ -2,100 +2,44 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>craft</title>
-    <meta name="application-name" content="craft">
-    <meta name="theme-color" content="#0B1A0F">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>craft · Proddyt Labs</title>
+  <meta name="application-name" content="craft">
+  <meta name="theme-color" content="#0a0b0d">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 
 <body>
-    <nav class="craft-nav">
-        <a href="https://proddyt.site" class="nav-back" title="Voltar ao hub"><span class="hub-mark">&lt;·&gt;</span> Home</a>
-        <span class="nav-brand"><span class="nav-mark">/·/</span><span class="nav-name">craft</span></span>
-    </nav>
+  <nav class="topnav">
+    <a href="https://proddyt.site" class="back-btn"><span class="arr">←</span> home</a>
+    <span class="brand"><span class="brand-mark">/·/</span> craft</span>
+  </nav>
 
-    <div class="hub-wrapper">
-        <header class="hub-header">
-            <div class="logo">
-                <h1>craft</h1>
-            </div>
-            <p>Landings dos sistemas Proddyt · Hub Acadêmico do CTI</p>
-        </header>
+  <div class="wrap">
+    <header>
+      <p class="kicker">páginas estáticas · proddyt labs</p>
+      <h1>craft<span class="dot">.</span></h1>
+      <div class="system-line">
+        <span><b id="stat-total">0</b> páginas</span>
+        <span class="sep">/</span>
+        <span id="clock">--:--:--</span>
+      </div>
+    </header>
 
-        <!-- Bloco 1: Landing Pages -->
-        <section class="hub-section">
-            <h2 class="section-label">Landing Pages</h2>
-            <div class="hub-grid hub-grid-landings">
+    <div class="grid" id="pages-grid"></div>
 
-                <a href="landings/punch.html" class="landing-card-link">
-                    <div class="landing-card" style="--lc-color:#22D3EE;--lc-bg:#0B1622;--lc-border:rgba(34,211,238,0.18)">
-                        <div class="landing-card-mark">[·]</div>
-                        <div class="landing-card-name">punch</div>
-                        <div class="landing-card-desc">Controle de ponto e horas trabalhadas</div>
-                        <span class="landing-card-cta">Ver landing →</span>
-                    </div>
-                </a>
+    <footer>
+      proddyt labs — edite <code>pages.js</code> para adicionar páginas (instruções no <code>README.md</code>).
+    </footer>
+  </div>
 
-                <a href="landings/nexo.html" class="landing-card-link">
-                    <div class="landing-card" style="--lc-color:#A78BFA;--lc-bg:#110D1F;--lc-border:rgba(167,139,250,0.18)">
-                        <div class="landing-card-mark">{·}</div>
-                        <div class="landing-card-name">nexo</div>
-                        <div class="landing-card-desc">Second brain colaborativo</div>
-                        <span class="landing-card-cta">Ver landing →</span>
-                    </div>
-                </a>
-
-                <a href="landings/vector.html" class="landing-card-link">
-                    <div class="landing-card" style="--lc-color:#FBB024;--lc-bg:#1A1200;--lc-border:rgba(251,176,36,0.18)">
-                        <div class="landing-card-mark">(·)</div>
-                        <div class="landing-card-name">vector</div>
-                        <div class="landing-card-desc">Tasks e gestão de projetos</div>
-                        <span class="landing-card-cta">Ver landing →</span>
-                    </div>
-                </a>
-
-                <a href="landings/wire.html" class="landing-card-link">
-                    <div class="landing-card" style="--lc-color:#F472B6;--lc-bg:#1A0D12;--lc-border:rgba(244,114,182,0.18)">
-                        <div class="landing-card-mark">«·»</div>
-                        <div class="landing-card-name">wire</div>
-                        <div class="landing-card-desc">Chat em tempo real entre membros</div>
-                        <span class="landing-card-cta">Ver landing →</span>
-                    </div>
-                </a>
-
-            </div>
-        </section>
-
-        <!-- Bloco 2: Hub Acadêmico -->
-        <section class="hub-section">
-            <h2 class="section-label">Hub Acadêmico</h2>
-            <a href="aulas/index.html" class="featured-card-link">
-                <div class="featured-card">
-                    <div class="featured-card-glow"></div>
-                    <div class="featured-card-body">
-                        <div class="featured-card-left">
-                            <div class="featured-card-marks">
-                                <span style="color:#777BB4">PHP</span>
-                                <span style="color:#EA2D2E">Java</span>
-                                <span style="color:#68217A">C#</span>
-                                <span style="color:#E34F26">Apps</span>
-                            </div>
-                            <h3 class="featured-card-title">Aulas do CTI</h3>
-                            <p class="featured-card-desc">Resumos completos e projetos das disciplinas do curso técnico. PHP, Java, C# e Aplicativos Web.</p>
-                        </div>
-                        <span class="featured-card-cta">Acessar hub →</span>
-                    </div>
-                </div>
-            </a>
-        </section>
-    </div>
-
+  <script src="pages.js?v=2"></script>
 </body>
 
 </html>
