@@ -8,7 +8,7 @@
   --text:      #ece9e2;
   --muted:     #7d7c75;
   --muted-2:   #565550;
-  --amber:     #ff7a18;
+  --amber:     #9D7CE5;
   --green:     #45d483;
   --blue:      #5b9bd5;
   --purple:    #a78bfa;
@@ -22,7 +22,7 @@ a { color: inherit; text-decoration: none; }
 body {
   background-color: var(--bg);
   background-image:
-    radial-gradient(1100px 500px at 70% -10%, rgba(255,122,24,0.09), transparent 60%),
+    radial-gradient(1100px 500px at 70% -10%, rgba(157,124,229,0.09), transparent 60%),
     radial-gradient(circle at center, rgba(255,255,255,0.025) 1px, transparent 1px);
   background-size: auto, 26px 26px;
   color: var(--text);
@@ -41,7 +41,7 @@ body {
   border: 1px solid var(--line-s); padding: 7px 14px; border-radius: 999px;
   display: inline-flex; align-items: center; gap: 6px; transition: all .18s;
 }
-.back-btn:hover { color: var(--amber); border-color: rgba(255,122,24,.5); }
+.back-btn:hover { color: var(--amber); border-color: rgba(157,124,229,.5); }
 .back-btn .arr { font-size: 13px; }
 .brand { font-family: var(--font-m); font-size: 13px; color: var(--muted); }
 .brand-mark { color: var(--amber); }
@@ -84,7 +84,7 @@ h1 .dot { color: var(--amber); }
 @keyframes rise { from { opacity:0; transform: translateY(14px);} to { opacity:1; transform:none; } }
 .card:hover {
   transform: translateY(-5px); border-color: var(--line-s); background: var(--bg-card-h);
-  box-shadow: 0 14px 40px -18px rgba(255,122,24,.55);
+  box-shadow: 0 14px 40px -18px rgba(157,124,229,.55);
 }
 
 .card-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
@@ -104,7 +104,7 @@ h1 .dot { color: var(--amber); }
 .card-tags { display: flex; gap: 6px; flex-wrap: wrap; }
 .tag {
   font-size: 10px; letter-spacing: .12em; font-weight: 700; padding: 3px 9px; border-radius: 6px;
-  color: var(--amber); background: rgba(255,122,24,.12); border: 1px solid rgba(255,122,24,.3);
+  color: var(--amber); background: rgba(157,124,229,.12); border: 1px solid rgba(157,124,229,.3);
 }
 .card-arrow { color: var(--muted); font-size: 14px; transition: transform .2s, color .2s; }
 .card:hover .card-arrow { color: var(--amber); transform: translateX(3px); }
@@ -122,10 +122,10 @@ h1 .dot { color: var(--amber); }
 
 /* destaque do tool */
 .card-tool {
-  background: linear-gradient(180deg, rgba(255,122,24,.05), transparent 70%), var(--bg-card);
-  border-color: rgba(255,122,24,.22);
+  background: linear-gradient(180deg, rgba(157,124,229,.05), transparent 70%), var(--bg-card);
+  border-color: rgba(157,124,229,.22);
 }
-.card-tool:hover { border-color: rgba(255,122,24,.45); }
+.card-tool:hover { border-color: rgba(157,124,229,.45); }
 
 footer { margin-top: 56px; font-size: 11.5px; color: var(--muted-2); }
 
