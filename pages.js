@@ -36,16 +36,37 @@ const PAGES = [
     mark:   "{2}",
     accent: "#5b9bd5",
   },
-
-  // ── Exemplo de SISTEMA (mostra status online/offline) ──
   {
-    name:   "Tools",
-    href:   "https://tools.proddyt.site",
-    desc:   "Utilitários de dev self-hosted — encode, crypto, regex e mais.",
-    tag:    "dev",
-    mark:   "[/]",
+    name:   "wire",
+    href:   "wire/",
+    desc:   "Landing — chat em tempo real.",
+    tag:    "landing",
+    mark:   "~",
     accent: "#45d483",
-    system: true,
+  },
+  {
+    name:   "nexo",
+    href:   "nexo/",
+    desc:   "Landing — second brain / conhecimento.",
+    tag:    "landing",
+    mark:   "8",
+    accent: "#9d7ce5",
+  },
+  {
+    name:   "vector",
+    href:   "vector/",
+    desc:   "Landing — tasks e projetos.",
+    tag:    "landing",
+    mark:   ">",
+    accent: "#e5b567",
+  },
+  {
+    name:   "punch",
+    href:   "punch/",
+    desc:   "Landing — controle de ponto.",
+    tag:    "landing",
+    mark:   "o",
+    accent: "#ff7a18",
   },
 ];
 
