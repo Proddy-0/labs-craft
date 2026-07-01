@@ -1,52 +1,63 @@
-# craft — páginas estáticas do Proddyt Labs
+# craft — portfolio + hub de pages estáticas do Proddyt Labs
 
-`craft.proddyt.site` é a **home das páginas estáticas**. A raiz (`/`) é o índice
-que lista as páginas; cada página vive num **sub-path** (ex: `/hub-aula-1/`).
+`craft` é a home pessoal (portfólio) **e** o catálogo de pages estáticas: labs, CTI,
+experimentos. A raiz (`/`) é o portfólio; cada projeto listado vive num **sub-path**
+(ex: `/hub-aula-1/`) ou aponta pra um repo externo.
 
 ```
 craft/
-├── index.html      ← o índice (não precisa editar)
-├── pages.js        ← A LISTA de páginas  ← edite AQUI
-├── style.css       ← identidade visual (igual à home)
+├── index.html      ← portfólio (home) — não precisa editar pra add projeto
+├── data.js         ← REGISTRY — stacks + array `projects`  ← edite AQUI
+├── script.js       ← render do portfólio (grid dinâmico, filtros) — não precisa mexer
+├── style.css       ← identidade visual
 ├── README.md
-└── hub-aula-1/     ← uma página (repo clonado)
-    └── index.html
+├── nexo/ punch/ vector/ wire/   ← landings (pages estáticas simples)
+└── hub-aula-1/ hub-aula-2/      ← submodules git (repo próprio, ver .gitmodules)
 ```
 
-## ➕ Adicionar uma página nova (ex: Hub de Aula 2)
+## ➕ Adicionar um projeto novo (ex: Hub de Aula 3)
 
-```bash
-# 1) clona o repo na pasta com o caminho que você quer (= o sub-path da URL)
-git clone <repo> /opt/docker/proddyt-labs/craft/hub-aula-2
+1. Se for página estática nova, clone o repo na pasta:
+   ```bash
+   git clone <repo> hub-aula-3
+   ```
+   (se quiser manter como submodule, adicione a entrada em `.gitmodules` também)
+2. Adicione UM objeto no array `projects` em `data.js`:
+   ```js
+   {
+     title: "Hub de Aula 3",
+     category: "cti",       // usado no filtro (all/labs/cti/tools)
+     type: "Projeto escolar",
+     status: "Ativo",
+     path: "hub-aula-3/",   // "#" se ainda não tem página publicada
+     repo: "https://github.com/...",
+     description: "...",
+     tags: ["CTI", "..."],
+     featured: false
+   }
+   ```
+3. Pronto — aparece automaticamente no catálogo (`#projetos`), sem mexer em HTML/CSS.
 
-# 2) adiciona UM objeto no array PAGES em pages.js:
-#    { name: "Hub de Aula 2", href: "hub-aula-2/", desc: "...", tag: "cti", mark: "{2}" }
+## Campos de um item (`data.js` → `projects`)
 
-# 3) rebuild
-cd /opt/docker/proddyt-labs/craft && docker compose up -d --build
-```
+| campo         | obrigatório | o quê |
+|---------------|:-----------:|-------|
+| `title`       | ✅ | título do card |
+| `category`    | ✅ | usado pelos botões de filtro (`labs`, `cti`, `tools`, ...) |
+| `type`        |    | subtítulo curto (ex: "Landing / visual lab") |
+| `status`      |    | rótulo de status (ex: "Ativo", "Planejado") |
+| `path`        | ✅ | `"pasta/"` (página estática) ou `"#"` se ainda não publicada |
+| `repo`        |    | link do repositório (vazio = sem link de repo) |
+| `description` |    | descrição curta |
+| `tags`        |    | array de chips exibidos no card |
+| `featured`    |    | `true` destaca o card com borda mais forte |
 
-Pronto: aparece no índice e fica acessível em `craft.proddyt.site/hub-aula-2/`.
+O grid tem teto de 3 colunas — com menos itens (por categoria filtrada) os cards
+esticam pra preencher a linha, sem deixar espaço vazio.
 
-## Campos de um item (pages.js)
-
-| campo    | obrigatório | o quê |
-|----------|:-----------:|-------|
-| `name`   | ✅ | título do card |
-| `href`   | ✅ | `"pasta/"` (página estática) **ou** `"https://..."` (sistema) |
-| `desc`   |    | descrição curta |
-| `tag`    |    | rótulo (ex: `cti`, `dev`) |
-| `mark`   |    | símbolo no ícone (ex: `{ }`) |
-| `accent` |    | cor hex do ícone |
-| `system` |    | **`true`** marca como SISTEMA → mostra status online/offline. |
-
-### Flag `system`
-Páginas estáticas estão **sempre no ar** (servidas pelo próprio nginx do craft),
-então **não** levam status online/offline — é só um link.
-Use `system: true` apenas para **sistemas/apps externos** (ex: `tools.proddyt.site`),
-que aí sim ganham o indicador online/offline (checado via favicon).
-
-## Requisitos da página clonada
+## Requisitos de uma página clonada
 - Ter um `index.html` na raiz da pasta.
 - Usar caminhos **relativos** para assets (`src/...`, `image/...`), nunca `/src/...`,
   para funcionar sob o sub-path.
+- Ter um link de volta pro craft (`← craft` apontando pra `../index.html`), pro
+  usuário conseguir navegar de volta pro portfólio.

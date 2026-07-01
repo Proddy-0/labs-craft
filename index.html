@@ -1,45 +1,119 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
+<!doctype html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>craft · Proddyt Labs</title>
-  <meta name="application-name" content="craft">
-  <meta name="theme-color" content="#0a0b0d">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proddyt · craft</title>
+  <meta name="description" content="Portfólio pessoal de Proddyt: desenvolvimento web, mobile, desktop, homelab, cloud e projetos CTI/Labs." />
+  <meta name="theme-color" content="#9d7ce5" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@400;500;700&display=swap">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="./style.css" />
 </head>
-
 <body>
-  <nav class="topnav">
-    <a href="https://proddyt.site" class="back-btn"><span class="arr">←</span> home</a>
-    <span class="brand"><span class="brand-mark">/·/</span> craft</span>
-  </nav>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Voltar ao topo">
+      <span class="brand-mark">P</span>
+      <span>
+        <strong>Proddyt</strong>
+        <small>craft · portfolio & pages hub</small>
+      </span>
+    </a>
 
-  <div class="wrap">
-    <header>
-      <p class="kicker">páginas estáticas · proddyt labs</p>
-      <h1>craft<span class="dot">.</span></h1>
-      <div class="system-line">
-        <span><b id="stat-total">0</b> páginas</span>
-        <span class="sep">/</span>
-        <span id="clock">--:--:--</span>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#stacks">Stacks</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-grid" id="sobre">
+      <div class="hero-copy">
+        <p class="eyebrow">Dev em formação · Homelab · CTI · Cloud</p>
+        <h1>Eu construo, quebro, entendo e documento sistemas.</h1>
+        <p class="lead">
+          craft é meu centro de páginas estáticas: portfólio pessoal, catálogo de labs,
+          projetos do CTI e experimentos — tudo num só lugar, publicado como site estático.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projetos">Ver projetos</a>
+          <a class="btn ghost" href="https://github.com/Proddy-0" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
       </div>
-    </header>
 
-    <div class="grid" id="pages-grid"></div>
+      <aside class="status-card" aria-label="Resumo técnico">
+        <span class="pulse"></span>
+        <h2>Status atual</h2>
+        <p>Foco em static pages, cloud, Docker, bancos, C#, Java, PHP, C++ e automações pessoais.</p>
+        <dl>
+          <div><dt>Modo</dt><dd>build & learn</dd></div>
+          <div><dt>Hub</dt><dd>craft</dd></div>
+          <div><dt>Accent</dt><dd>#9D7CE5</dd></div>
+        </dl>
+      </aside>
+    </section>
 
-    <footer>
-      proddyt labs — edite <code>pages.js</code> para adicionar páginas (instruções no <code>README.md</code>).
-    </footer>
-  </div>
+    <section class="section" id="stacks">
+      <div class="section-head">
+        <p class="eyebrow">Stacks</p>
+        <h2>O que eu venho mexendo</h2>
+        <p>Um mapa honesto das tecnologias que aparecem nos meus estudos, labs e projetos pessoais.</p>
+      </div>
+      <div class="stack-grid" id="stackGrid"></div>
+    </section>
 
-  <script src="pages.js?v=2"></script>
+    <section class="section" id="projetos">
+      <div class="section-head split">
+        <div>
+          <p class="eyebrow">Pages & projetos</p>
+          <h2>Catálogo vivo</h2>
+          <p>Projetos destacados, exercícios do CTI, labs visuais e páginas publicadas por este craft.</p>
+        </div>
+        <div class="filters" role="tablist" aria-label="Filtro de projetos">
+          <button class="filter active" data-filter="all" type="button">Todos</button>
+          <button class="filter" data-filter="labs" type="button">Labs</button>
+          <button class="filter" data-filter="cti" type="button">CTI</button>
+          <button class="filter" data-filter="tools" type="button">Tools</button>
+        </div>
+      </div>
+      <div class="project-grid" id="projectGrid"></div>
+    </section>
+
+    <section class="section roadmap" id="roadmap">
+      <div class="section-head">
+        <p class="eyebrow">Roadmap</p>
+        <h2>Próximos passos</h2>
+      </div>
+      <div class="timeline">
+        <article>
+          <span>01</span>
+          <h3>Craft como centro de pages</h3>
+          <p>Home como portfólio, catálogo filtrável por categoria, registry simples pra adicionar projetos. ✅ feito.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Publicar static hosting</h3>
+          <p>Subir primeiro na AWS S3 + CloudFront pra aprender infra, depois Azure Static Web Apps pra auto deploy.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Separar labs, CTI e arquivos</h3>
+          <p>Cada projeto com categoria, status, stack, link e histórico mínimo. Sim, organização, aquela criatura rara.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Proddyt. Feito em HTML, CSS e JS puro, porque nem toda página precisa nascer carregando uma carreta de dependências.</p>
+  </footer>
+
+  <script src="./data.js"></script>
+  <script src="./script.js"></script>
 </body>
-
 </html>
