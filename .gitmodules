@@ -1,0 +1,6 @@
+[submodule "hub-aula-1"]
+    path = hub-aula-1
+    url = https://github.com/Proddy-0/cti-ap1-hub-aula.git
+[submodule "hub-aula-2"]
+    path = hub-aula-2
+    url = https://github.com/Proddy-0/cti-ap1-hub-aula-2.git
