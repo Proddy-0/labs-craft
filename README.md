@@ -43,6 +43,7 @@ craft/
 | campo         | obrigatório | o quê |
 |---------------|:-----------:|-------|
 | `title`       | ✅ | título do card |
+| `icon`        |    | símbolo curto no ícone do card (ex: `"~"`, `"{1}"`, `"⚡"`) — sem isso, usa o ícone padrão da categoria |
 | `category`    | ✅ | usado pelos botões de filtro (`labs`, `cti`, `tools`, ...) |
 | `type`        |    | subtítulo curto (ex: "Landing / visual lab") |
 | `status`      |    | rótulo de status (ex: "Ativo", "Planejado") |

@@ -1,7 +1,7 @@
 const stacks = [
   {
     title: "Web estático",
-    items: ["HTML", "CSS", "JavaScript", "Static Pages", "S3/CloudFront"]
+    items: ["HTML", "CSS", "JavaScript", "S3/CloudFront"]
   },
   {
     title: "Frontend moderno",
@@ -9,7 +9,7 @@ const stacks = [
   },
   {
     title: "Backend & banco",
-    items: ["Node.js", "Express", "PostgreSQL", "Prisma", "MongoDB"]
+    items: ["Node.js", "Express", "PostgreSQL", "Prisma"]
   },
   {
     title: "Desktop/Curso",
@@ -17,17 +17,18 @@ const stacks = [
   },
   {
     title: "Infra pessoal",
-    items: ["Docker", "Linux", "Homelab", "Tailscale", "Cloudflare"]
+    items: ["Docker", "Linux", "Tailscale", "Cloudflare"]
   },
   {
     title: "Cloud em estudo",
-    items: ["AWS", "Azure", "Static Hosting", "Managed DB", "CI/CD"]
+    items: ["AWS", "Azure", "Static Hosting", "CI/CD"]
   }
 ];
 
 const projects = [
   {
     title: "Labs Nexo",
+    icon: "8",
     category: "labs",
     type: "Landing / visual lab",
     status: "Publicado",
@@ -39,6 +40,7 @@ const projects = [
   },
   {
     title: "Labs Punch",
+    icon: "o",
     category: "labs",
     type: "Landing / visual lab",
     status: "Publicado",
@@ -50,6 +52,7 @@ const projects = [
   },
   {
     title: "Labs Wire",
+    icon: "~",
     category: "labs",
     type: "Landing / visual lab",
     status: "Publicado",
@@ -61,6 +64,7 @@ const projects = [
   },
   {
     title: "Labs Vector",
+    icon: ">",
     category: "labs",
     type: "Landing / visual lab",
     status: "Publicado",
@@ -72,6 +76,7 @@ const projects = [
   },
   {
     title: "Hub Aula 1",
+    icon: "{1}",
     category: "cti",
     type: "Projeto escolar",
     status: "Ativo",
@@ -83,6 +88,7 @@ const projects = [
   },
   {
     title: "Hub Aula 2",
+    icon: "{2}",
     category: "cti",
     type: "Projeto escolar",
     status: "Ativo",
@@ -94,6 +100,7 @@ const projects = [
   },
   {
     title: "Proddyt Tools",
+    icon: "⚡",
     category: "tools",
     type: "Ferramentas web",
     status: "Planejado",
@@ -105,6 +112,7 @@ const projects = [
   },
   {
     title: "CTI C# Banco",
+    icon: "DB",
     category: "cti",
     type: "Estudo desktop/banco",
     status: "Arquivo vivo",
@@ -116,6 +124,7 @@ const projects = [
   },
   {
     title: "CTI C++ Armário Automatizado",
+    icon: "⚙",
     category: "cti",
     type: "Projeto técnico",
     status: "Arquivo vivo",

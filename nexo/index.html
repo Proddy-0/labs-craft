@@ -12,16 +12,6 @@
     body { background: #110D1F; color: #cbd5e1; font-family: 'Inter', system-ui, sans-serif; min-height: 100vh; }
     a { text-decoration: none; color: inherit; }
 
-    nav {
-      border-bottom: 1px solid rgba(167,139,250,0.08);
-      padding: 1rem 2rem;
-      display: flex; align-items: center; justify-content: space-between;
-      font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;
-    }
-    .nav-back { color: #6B5A8A; transition: color 0.15s; }
-    .nav-back:hover { color: #A78BFA; }
-    .nav-brand { color: #A78BFA; font-weight: 500; }
-
     main { max-width: 860px; margin: 0 auto; padding: 5rem 2rem 4rem; }
 
     .hero { text-align: center; margin-bottom: 4rem; }
@@ -58,13 +48,23 @@
     .feature p { font-size: 0.82rem; color: #64748b; line-height: 1.55; }
 
     footer { text-align: center; padding: 2.5rem 1rem; color: #2D2440; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; border-top: 1px solid rgba(167,139,250,0.06); margin-top: 4rem; }
+
+    .craft-back {
+      position: fixed; top: 16px; left: 16px; z-index: 999;
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 14px; border-radius: 999px;
+      background: rgba(9,7,15,.78); backdrop-filter: blur(10px);
+      border: 1px solid rgba(157,124,229,.35);
+      color: #f4efff; text-decoration: none;
+      font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", ui-monospace, monospace;
+      font-size: .8rem; font-weight: 500;
+      transition: border-color .18s, color .18s, transform .18s;
+    }
+    .craft-back:hover { border-color: #9d7ce5; color: #9d7ce5; transform: translateX(-2px); }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="../index.html" class="nav-back">← craft</a>
-    <span class="nav-brand">{·} nexo</span>
-  </nav>
+  <a href="../index.html" class="craft-back">← craft</a>
 
   <main>
     <div class="hero">
