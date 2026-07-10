@@ -104,7 +104,7 @@ const projects = [
     category: "tools",
     type: "Ferramentas web",
     status: "Publicado",
-    path: "https://tools.proddyt.site",
+    path: "https://tools.proddyt.com",
     repo: "https://github.com/Proddy-0/labs-tools",
     description: "Conjunto de utilitários web para markdown, YAML, TOML, SQL formatter, QR Code e outros atalhos técnicos.",
     tags: ["Nuxt", "Tools", "Client-side"],
