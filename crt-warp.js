@@ -150,13 +150,6 @@ export function initCRTWarp(container, options = {}) {
   if (!container) return () => {};
   const o = { ...DEFAULTS, ...options };
 
-  // prefers-reduced-motion: nao anima, so pinta o fundo solido.
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduced) {
-    container.style.background = o.backgroundColor;
-    return () => {};
-  }
-
   const scene = new THREE.Scene();
   const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
   const geometry = new THREE.PlaneGeometry(2, 2);
