@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Proddyt · craft</title>
   <meta name="description" content="Portfólio pessoal de Proddyt: desenvolvimento web, mobile, desktop, homelab, cloud e projetos CTI/Labs." />
-  <meta name="theme-color" content="#9d7ce5" />
+  <meta name="theme-color" content="#642fd5" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +15,7 @@
 </head>
 <body>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="bg-fx" id="bgFx" aria-hidden="true"></div>
   <div class="spotlight" aria-hidden="true"></div>
   <div class="noise" aria-hidden="true"></div>
 
@@ -60,7 +61,7 @@
         <dl>
           <div><dt>Status</dt><dd>em aprendizado ativo</dd></div>
           <div><dt>Hub</dt><dd>craft</dd></div>
-          <div><dt>Accent</dt><dd>#9D7CE5</dd></div>
+          <div><dt>Accent</dt><dd>#642FD5</dd></div>
         </dl>
       </aside>
     </section>
@@ -109,5 +110,29 @@
 
   <script src="./data.js"></script>
   <script src="./script.js"></script>
+  <script type="module">
+    import { initCRTWarp } from './crt-warp.js';
+    initCRTWarp(document.getElementById('bgFx'), {
+      color: '#642fd5',
+      backgroundColor: '#07060c',
+      speed: 0.15,
+      curvature: 0,
+      scanlineStrength: 0.75,
+      scanlineFrequency: 285,
+      waveAmplitude: 0.65,
+      waveFrequency: 5.2,
+      bloom: 3,
+      bloomRadius: 0.1,
+      noise: 0.25,
+      vignette: 0,
+      brightness: 1.25,
+      pixelation: 1,
+      rgbShift: 0.015,
+      mouseReact: true,
+      mouseStrength: 0.5,
+      dpr: 1,
+      fps: 30
+    });
+  </script>
 </body>
 </html>
