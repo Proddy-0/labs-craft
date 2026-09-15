@@ -276,4 +276,5 @@ dt { color: var(--soft); } dd { margin: 0; color: var(--text); }
   .stack-card, .project-card { animation: none; }
   .pulse { animation: none; }
   .spotlight { display: none; }
+  .bg-fx { display: none; }
 }
