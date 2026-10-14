@@ -1,103 +1,55 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR" data-brand="labs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>wire · Chat em Tempo Real</title>
-  <meta name="theme-color" content="#1A0D12">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #1A0D12; color: #cbd5e1; font-family: 'Inter', system-ui, sans-serif; min-height: 100vh; }
-    a { text-decoration: none; color: inherit; }
-
-    main { max-width: 860px; margin: 0 auto; padding: 5rem 2rem 4rem; }
-
-    .hero { text-align: center; margin-bottom: 4rem; }
-    .mark {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 3.5rem; font-weight: 600; color: #F472B6;
-      display: block; margin-bottom: 1.5rem;
-      text-shadow: 0 0 40px rgba(244,114,182,0.3);
-    }
-    .hero h1 { font-size: 2.6rem; font-weight: 800; color: #e2e8f0; letter-spacing: -0.03em; margin-bottom: 1rem; line-height: 1.15; }
-    .hero p { font-size: 1.1rem; color: #64748b; max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.65; }
-
-    .cta {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 14px 32px; background: #F472B6; color: #1A0D12;
-      border-radius: 10px; font-weight: 700; font-size: 0.95rem;
-      transition: all 0.2s;
-    }
-    .cta:hover { background: #F9A8D4; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(244,114,182,0.25); }
-
-    .features {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
-      margin-top: 4rem;
-    }
-    @media (max-width: 600px) { .features { grid-template-columns: 1fr; } main { padding: 3rem 1.25rem; } }
-
-    .feature {
-      background: rgba(244,114,182,0.04);
-      border: 1px solid rgba(244,114,182,0.1);
-      border-radius: 14px; padding: 24px;
-    }
-    .feature-icon { font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; color: #F472B6; margin-bottom: 10px; }
-    .feature h3 { font-size: 0.95rem; font-weight: 600; color: #e2e8f0; margin-bottom: 6px; }
-    .feature p { font-size: 0.82rem; color: #64748b; line-height: 1.55; }
-
-    footer { text-align: center; padding: 2.5rem 1rem; color: #3D1828; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; border-top: 1px solid rgba(244,114,182,0.06); margin-top: 4rem; }
-
-    .craft-back {
-      position: fixed; top: 16px; left: 16px; z-index: 999;
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 8px 14px; border-radius: 999px;
-      background: rgba(9,7,15,.78); backdrop-filter: blur(10px);
-      border: 1px solid rgba(157,124,229,.35);
-      color: #f4efff; text-decoration: none;
-      font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", ui-monospace, monospace;
-      font-size: .8rem; font-weight: 500;
-      transition: border-color .18s, color .18s, transform .18s;
-    }
-    .craft-back:hover { border-color: #9d7ce5; color: #9d7ce5; transform: translateX(-2px); }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>wire · Chat em Tempo Real</title>
+<meta name="description" content="Converse em tempo real com sua equipe. Salas por projeto, mensagens diretas e histórico sempre disponível.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Proddyt-Labs/brand@1/tokens.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Proddyt-Labs/brand@1/base.css">
+<script src="https://cdn.jsdelivr.net/gh/Proddyt-Labs/brand@1/theme.js"></script>
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <a href="../index.html" class="craft-back">← craft</a>
-
-  <main>
-    <div class="hero">
-      <span class="mark">«·»</span>
-      <h1>Comunicação direta,<br>sem ruído</h1>
-      <p>Converse em tempo real com sua equipe. Salas por projeto, mensagens diretas e histórico sempre disponível.</p>
-      <a href="https://wire.proddyt.site" class="cta">Acessar wire →</a>
+<header class="p-header">
+  <div class="p-container">
+    <a class="p-logo" href="/"><img class="p-mark" src="https://cdn.jsdelivr.net/gh/Proddyt-Labs/brand@1/marks/labs-mark.svg" alt=""> proddyt <span class="p-logo-suffix">~/labs</span></a>
+    <nav class="p-nav" aria-label="Navegação principal">
+      <a href="../#projetos">← Catálogo</a>
+    </nav>
+    <button class="p-icon-btn" type="button" data-theme-toggle></button>
+  </div>
+</header>
+<main class="p-container">
+  <section class="sub-hero">
+    <span class="mark-glyph" aria-hidden="true">«·»</span>
+    <h1>Comunicação direta,<br>sem ruído</h1>
+    <p>Converse em tempo real com sua equipe. Salas por projeto, mensagens diretas e histórico sempre disponível.</p>
+    <div class="p-actions"><a class="p-btn" href="https://wire.proddyt.com">Acessar wire →</a></div>
+  </section>
+  <section class="p-section sub-features">
+    <div class="p-grid">
+      <div class="p-card"><span class="p-eyebrow">→ salas</span><h3>Salas de conversa</h3><p class="p-muted">Crie salas por projeto ou time. Mantenha as conversas organizadas por contexto.</p></div>
+      <div class="p-card"><span class="p-eyebrow">→ direto</span><h3>Mensagens diretas</h3><p class="p-muted">Converse diretamente com qualquer membro. Rápido e sem burocracia.</p></div>
+      <div class="p-card"><span class="p-eyebrow">→ histórico</span><h3>Histórico persistente</h3><p class="p-muted">Todas as mensagens ficam salvas. Volte e encontre qualquer conversa passada.</p></div>
+      <div class="p-card"><span class="p-eyebrow">→ sso</span><h3>Login via Gate</h3><p class="p-muted">Single sign-on com o restante do ecossistema Proddyt. Uma conta pra tudo.</p></div>
     </div>
-
-    <div class="features">
-      <div class="feature">
-        <div class="feature-icon">→ salas</div>
-        <h3>Salas de conversa</h3>
-        <p>Crie salas por projeto ou time. Mantenha as conversas organizadas por contexto.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">→ direto</div>
-        <h3>Mensagens diretas</h3>
-        <p>Converse diretamente com qualquer membro. Rápido e sem burocracia.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">→ histórico</div>
-        <h3>Histórico persistente</h3>
-        <p>Todas as mensagens ficam salvas. Volte e encontre qualquer conversa passada.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">→ sso</div>
-        <h3>Login via Gate</h3>
-        <p>Single sign-on com o restante do ecossistema Proddyt. Uma conta pra tudo.</p>
-      </div>
-    </div>
-  </main>
-
-  <footer>wire · proddyt labs</footer>
+  </section>
+</main>
+<footer class="p-footer">
+  <div class="p-container">
+    <span>Proddyt Labs</span>
+    <nav class="footer-links" aria-label="Links do rodapé">
+      <a href="https://home.proddyt.com">home.proddyt.com</a>
+      <a href="https://tools.proddyt.com">tools.proddyt.com</a>
+      <a href="https://switch.proddyt.com">switch.proddyt.com (Proddyt Studio)</a>
+      <a href="https://github.com/Proddy-0">GitHub</a>
+    </nav>
+  </div>
+</footer>
 </body>
 </html>

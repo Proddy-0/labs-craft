@@ -100,7 +100,7 @@ const projects = [
   },
   {
     title: "Proddyt Tools",
-    icon: "⚡",
+    icon: "//",
     category: "tools",
     type: "Ferramentas web",
     status: "Publicado",
@@ -124,7 +124,7 @@ const projects = [
   },
   {
     title: "CTI C++ Armário Automatizado",
-    icon: "⚙",
+    icon: "cpp",
     category: "cti",
     type: "Projeto técnico",
     status: "Arquivo vivo",
